@@ -18,3 +18,8 @@ A shipped Phase 1 project includes:
 A shipped Phase 2 project includes:
 - A short video of the board working
 - Photos of the assembled board
+
+## Colors
+#c01749
+#d42060
+#e01f5a
