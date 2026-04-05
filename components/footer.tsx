@@ -20,7 +20,7 @@ export default function Footer() {
           {/* Content Section */}
           <div className="flex flex-col gap-6 flex-1">
             <div className="flex items-center gap-3">
-              <Image alt="Boot Logo" src="/icon.svg" width={100} height={60} />
+              <Image alt="Redboard Logo" src="/icon.svg" width={100} height={60} />
               <div className="text-primary text-2xl font-bold">Redboard</div>
             </div>
             

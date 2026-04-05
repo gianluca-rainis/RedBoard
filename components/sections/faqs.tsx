@@ -8,7 +8,7 @@ export default function FAQsSection() {
         <div>
           <h3 className="font-semibold mb-2">Who can participate?</h3>
           <p className="text-sm">
-            Any teenager 13-18 can participate. It&apos;s not required to have any prior experience with hardware or software development.
+            Any teenager 13-18 included can participate. It&apos;s not required to have any prior experience with hardware or software development.
           </p>
         </div>
         <div>

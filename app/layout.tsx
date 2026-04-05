@@ -9,19 +9,21 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Boot - Build your OS, get hardware to run it",
-    template: "%s | Boot",
+    default: "Redboard - Design an RP2040-powered board, get funds to build it!",
+    template: "%s | Redboard",
   },
-  description: "Build your OS, Get hardware to run it. A Hack Club YSWS.",
+  description: "Design an RP2040-powered board, get funds to build it! A Hack Club YSWS.",
   keywords: [
     "ysws",
     "hackathon",
-    "operating system",
-    "os",
-    "linux",
     "hack club",
     "programming",
     "teens",
+    "electronics",
+    "hardware",
+    "rp2040",
+    "raspberry pi",
+    "microcontroller",
   ],
 };
 
