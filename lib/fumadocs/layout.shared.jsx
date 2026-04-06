@@ -1,8 +1,7 @@
 import ButtonAnimation from "@/components/buttons/animation";
-import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import Image from "next/image";
 
-function Fa7BrandsSlack(props: React.SVGProps<SVGSVGElement>) {
+function Fa7BrandsSlack(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +19,7 @@ function Fa7BrandsSlack(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export function baseOptions(): BaseLayoutProps {
+export function baseOptions() {
   return {
     nav: {
       title: (

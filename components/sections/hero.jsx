@@ -13,7 +13,7 @@ export default function HeroSection() {
   const router = useRouter();
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const trimmedEmail = email.trim();
     if (!trimmedEmail) {

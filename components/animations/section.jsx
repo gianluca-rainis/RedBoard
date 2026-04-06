@@ -8,11 +8,7 @@ export default function AnimatedSection({
   className,
   delay = 0.2,
   ...props
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-} & React.ComponentProps<typeof motion.div>) {
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

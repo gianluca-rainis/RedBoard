@@ -8,14 +8,14 @@ export default function FAQsSection() {
         <div>
           <h3 className="font-semibold mb-2">Who can participate?</h3>
           <p className="text-sm">
-            Any teenager 13-18 included can participate. It&apos;s not required to have any prior experience with hardware or software development.
+            Any teenager 13-18 included can participate. It's not required to have any prior experience with hardware or software development.
           </p>
         </div>
         <div>
-          <h3 className="font-semibold mb-2">Don&apos;t know how to make a board?</h3>
+          <h3 className="font-semibold mb-2">Don't know how to make a board?</h3>
           <p className="text-sm">
-            Dont&apos;t worry! This program is designed to be beginner-friendly, and we&apos;ll provide resources to help you through the process.
-            We encourage you to give it a try, even if you&apos;re new to hardware design!
+            Dont't worry! This program is designed to be beginner-friendly, and we'll provide resources to help you through the process.
+            We encourage you to give it a try, even if you're new to hardware design!
           </p>
         </div>
         <div>

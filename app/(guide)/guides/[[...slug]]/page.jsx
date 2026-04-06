@@ -7,12 +7,9 @@ import {
 } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import { getMDXComponents } from "@/mdx-components";
-import type { Metadata } from "next";
 import { createRelativeLink } from "fumadocs-ui/mdx";
 
-export default async function Page(
-  props: PageProps<"/guides/[[...slug]]">,
-) {
+export default async function Page(props) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
@@ -39,9 +36,7 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(
-  props: PageProps<"/guides/[[...slug]]">,
-): Promise<Metadata> {
+export async function generateMetadata(props) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();

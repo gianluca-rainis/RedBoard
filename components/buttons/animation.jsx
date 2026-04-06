@@ -2,11 +2,7 @@
 
 import { motion } from "motion/react";
 
-export default function ButtonAnimation({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ButtonAnimation({ children }) {
   return (
     <motion.div
       whileHover={{ scale: 1.02, y: -1 }}

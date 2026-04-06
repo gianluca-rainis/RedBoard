@@ -1,12 +1,11 @@
-import type { NextConfig } from "next";
 import { createMDX } from "fumadocs-mdx/next";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   
 };
 
 const withMDX = createMDX({
-  configPath: "source.config.ts",
+  configPath: "source.config.js",
 });
 
 export default withMDX(nextConfig);

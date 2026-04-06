@@ -1,12 +1,7 @@
 import Navbar from "@/components/navbar";
-import JoinButton from "@/components/buttons/join";
 import Footer from "@/components/footer";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
     <>
       <div className="min-h-screen flex flex-col">
