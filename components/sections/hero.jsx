@@ -30,12 +30,16 @@ export default function HeroSection() {
       <AnimatedSection className="relative min-h-screen w-screen ml-[calc(-50vw+50%)] -mt-4 flex items-center justify-center px-4 overflow-hidden">
         <div className="heroImages heroImagesDelay1 hidden md:block left-[8%] top-[18%] w-[140px] h-[140px] opacity-70">
           <div className="relative w-full h-full">
-            <Image alt="RP2040" src="/rp2040.png" fill className="object-contain" sizes="140px" priority />
+            <a href="https://www.raspberrypi.com/products/rp2040" target="_blank" rel="noopener noreferrer">
+              <Image alt="RP2040" src="/rp2040.png" fill className="object-contain" sizes="140px" priority />
+            </a>
           </div>
         </div>
         <div className="heroImages heroImagesDelay2 hidden md:block right-[8%] top-[18%] w-[140px] h-[140px] opacity-70">
           <div className="relative w-full h-full">
-            <Image alt="PiCat Board" src="/picat.png" fill className="object-contain" sizes="140px" priority />
+            <a href="https://blueprint.hackclub.com/projects/5989" target="_blank" rel="noopener noreferrer">
+              <Image alt="PiCat Board" src="/picat.png" fill className="object-contain" sizes="140px" priority />
+            </a>
           </div>
         </div>
         <div className="relative z-10 max-w-4xl w-full flex flex-col justify-center space-y-4 items-center">
@@ -87,12 +91,16 @@ export default function HeroSection() {
         </div>
         <div className="heroImages heroImagesDelay3 hidden md:block left-[10%] bottom-[8%] w-[150px] h-[150px] opacity-70">
           <div className="relative w-full h-full">
-            <Image alt="Orpheus Pico Board" src="/orpheusPico.png" fill className="object-contain" sizes="150px" priority />
+            <a href="https://orpheuspico.hackclub.com" target="_blank" rel="noopener noreferrer">
+              <Image alt="Orpheus Pico Board" src="/orpheusPico.png" fill className="object-contain" sizes="150px" priority />
+            </a>
           </div>
         </div>
         <div className="heroImages heroImagesDelay4 hidden md:block right-[10%] bottom-[8%] w-[150px] h-[150px] opacity-70">
           <div className="relative w-full h-full">
-            <Image alt="Z80DevBoard Board" src="/z80devboard.png" fill className="object-contain" sizes="150px" priority />
+            <a href="https://blueprint.hackclub.com/projects/13391" target="_blank" rel="noopener noreferrer">
+              <Image alt="Z80DevBoard Board" src="/z80devboard.png" fill className="object-contain" sizes="150px" priority />
+            </a>
           </div>
         </div>
       </AnimatedSection>
