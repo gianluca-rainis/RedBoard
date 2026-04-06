@@ -23,3 +23,8 @@ A shipped Phase 2 project includes:
 #c01749
 #d42060
 #e01f5a
+
+## Env file content
+> SITE_URL
+
+The url of the site
