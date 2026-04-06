@@ -226,4 +226,21 @@
         bottom: 0;
         transform: rotate(180deg);
     }
+
+    .heroImages {
+        position: absolute;
+        animation: 3s linear infinite oscillator;
+    }
+
+    @keyframes oscillator {
+        0%, 50%, 100% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(-10deg);
+        }
+        75% {
+            transform: rotate(10deg);
+        }
+    }
 }
