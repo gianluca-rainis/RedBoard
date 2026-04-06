@@ -232,6 +232,22 @@
         animation: 3s linear infinite oscillator;
     }
 
+    .heroImagesDelay1 {
+        animation-delay: 0s;
+    }
+
+    .heroImagesDelay2 {
+        animation-delay: -0.75s;
+    }
+
+    .heroImagesDelay3 {
+        animation-delay: -1.5s;
+    }
+
+    .heroImagesDelay4 {
+        animation-delay: -2.25s;
+    }
+
     @keyframes oscillator {
         0%, 50%, 100% {
             transform: rotate(0deg);

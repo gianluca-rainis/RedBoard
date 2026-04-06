@@ -28,8 +28,16 @@ export default function HeroSection() {
     <div>
       <Image className="pcbTracesHome" src="/Redboard_traces.svg" alt="PCB Traces" width={200} height={200} />
       <AnimatedSection className="relative min-h-screen w-screen ml-[calc(-50vw+50%)] -mt-4 flex items-center justify-center px-4 overflow-hidden">
-        <Image alt="RP2040" src="/rp2040.png" width={200} height={200} className="heroImages" style={{top: "15%", left: "10%"}} />
-        <Image alt="PiCat Board" src="/picat.png" width={200} height={200} className="heroImages" style={{top: "15%", right: "10%"}} />
+        <div className="heroImages heroImagesDelay1 hidden md:block left-[8%] top-[18%] w-[140px] h-[140px] opacity-70">
+          <div className="relative w-full h-full">
+            <Image alt="RP2040" src="/rp2040.png" fill className="object-contain" sizes="140px" priority />
+          </div>
+        </div>
+        <div className="heroImages heroImagesDelay2 hidden md:block right-[8%] top-[18%] w-[140px] h-[140px] opacity-70">
+          <div className="relative w-full h-full">
+            <Image alt="PiCat Board" src="/picat.png" fill className="object-contain" sizes="140px" priority />
+          </div>
+        </div>
         <div className="relative z-10 max-w-4xl w-full flex flex-col justify-center space-y-4 items-center">
           <Image alt="Redboard Logo" src="/icon.svg" width={300} height={300} />
           <p className="font-bold text-2xl text-muted-foreground">
@@ -77,10 +85,19 @@ export default function HeroSection() {
             </ButtonAnimation>
           </div>
         </div>
-        <Image alt="Orpheus Pico Board" src="/orpheusPico.png" width={200} height={200} className="heroImages" style={{bottom: "10%", left: "10%"}} />
-        <Image alt="Z80DevBoard Board" src="/z80devboard.png" width={200} height={200} className="heroImages" style={{bottom: "10%", right: "10%"}} />
+        <div className="heroImages heroImagesDelay3 hidden md:block left-[10%] bottom-[8%] w-[150px] h-[150px] opacity-70">
+          <div className="relative w-full h-full">
+            <Image alt="Orpheus Pico Board" src="/orpheusPico.png" fill className="object-contain" sizes="150px" priority />
+          </div>
+        </div>
+        <div className="heroImages heroImagesDelay4 hidden md:block right-[10%] bottom-[8%] w-[150px] h-[150px] opacity-70">
+          <div className="relative w-full h-full">
+            <Image alt="Z80DevBoard Board" src="/z80devboard.png" fill className="object-contain" sizes="150px" priority />
+          </div>
+        </div>
       </AnimatedSection>
       <Image className="pcbTracesHome pcbTracesHomeBottom" src="/Redboard_traces.svg" alt="PCB Traces" width={200} height={200} />
     </div>
   );
 }
+
