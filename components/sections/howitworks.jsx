@@ -47,35 +47,35 @@ export function HowItWorksSection() {
       <h2 className="text-primary text-2xl">How It Works</h2>
 
       <div className="grid gap-6 md:grid-cols-2">
-          {steps.map((step, index) => {
-            return (
-              <Card key={index} className="group relative overflow-hidden border-border/60">
-                <div className="relative overflow-hidden">
-                  <Image
-                    src={step.image}
-                    alt={step.title}
-                    className="h-auto w-full transition duration-300 group-hover:scale-[1.02]"
-                    width={300}
-                    height={300}
-                  />
-                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/98 via-background/85 to-transparent opacity-0 transition duration-300 group-hover:opacity-100">
-                    <div className="px-5 pt-5">
-                      <CardTitle className="text-xl text-foreground">
-                        {step.title}
-                      </CardTitle>
-                      <p className="mt-3 text-sm text-foreground/85">
-                        {step.description}
-                      </p>
-                    </div>
+        {steps.map((step, index) => {
+          return (
+            <Card key={index} className="group relative overflow-hidden border-border/60">
+              <div className="relative overflow-hidden">
+                <Image
+                  src={step.image}
+                  alt={step.title}
+                  className="h-auto w-full transition duration-300 group-hover:scale-[1.02]"
+                  width={300}
+                  height={300}
+                />
+                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/98 via-background/85 to-transparent opacity-0 transition duration-300 group-hover:opacity-100">
+                  <div className="px-5 pt-5">
+                    <CardTitle className="text-xl text-foreground">
+                      {step.title}
+                    </CardTitle>
+                    <p className="mt-3 text-sm text-foreground/85">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
-                <CardContent className="sr-only">
-                  <p>{step.description}</p>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
-      </AnimatedSection>
-    );
-  }
+              </div>
+              <CardContent className="sr-only">
+                <p>{step.description}</p>
+              </CardContent>
+            </Card>
+          );
+        })}
+      </div>
+    </AnimatedSection>
+  );
+}

@@ -227,6 +227,29 @@
         transform: rotate(180deg);
     }
 
+    .pcbTracesSide {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100vh;
+        height: 100%;
+        object-fit: fill;
+        opacity: 0.14;
+        z-index: 0;
+        pointer-events: none;
+        transform-origin: center;
+    }
+
+    .pcbTracesSideLeft {
+        left: 0;
+        transform: rotate(-90deg);
+    }
+
+    .pcbTracesSideRight {
+        right: 0;
+        transform: rotate(90deg);
+    }
+
     .heroImages {
         position: absolute;
         animation: 3s linear infinite oscillator;

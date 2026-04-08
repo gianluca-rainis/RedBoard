@@ -8,9 +8,7 @@ export default function AboutSection() {
       <Card>
         <CardContent className="space-y-4">
           <p>
-            Redboard is a YSWS (You Ship We Ship) where teens from around the world
-            come together to build their own RP2040-powered PCBs - and get funds to
-            build them!
+            A Hack Club YSWS where teens from around the world build design a custom RP2040-powered PCB from scratch, earn credits based on tracked hours, and redeem them for grants to manufacture and build their board.
           </p>
         </CardContent>
       </Card>
