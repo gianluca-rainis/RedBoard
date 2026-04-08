@@ -9,9 +9,17 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-10">
       <HeroSection />
-      <HowItWorksSection />
-      <WhatCountsSection />
-      <FAQsSection />
+      <div className="relative">
+        <div className="homeSidePattern" aria-hidden="true">
+          <div className="homeSidePatternLeft" />
+          <div className="homeSidePatternRight" />
+        </div>
+        <div className="relative z-10">
+          <HowItWorksSection />
+          <WhatCountsSection />
+          <FAQsSection />
+        </div>
+      </div>
       <Link
         href="https://hackclub.com"
         target="_blank"

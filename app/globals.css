@@ -218,13 +218,66 @@
         height: 100%;
         object-fit: cover;
         opacity: 0.2;
-        z-index: -1;
+        z-index: 0;
+        pointer-events: none;
     }
 
     .pcbTracesHomeBottom {
         top: auto;
         bottom: 0;
         transform: rotate(180deg);
+    }
+
+    .homeSidePattern {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 50vw);
+        width: 100vw;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .homeSidePatternLeft,
+    .homeSidePatternRight {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: min(70vw, 700px);
+        overflow: hidden;
+    }
+
+    .homeSidePatternLeft {
+        left: 0;
+    }
+
+    .homeSidePatternRight {
+        right: 0;
+    }
+
+    .homeSidePatternLeft::before,
+    .homeSidePatternRight::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1200vh;
+        height: 100%;
+        background-image: url("/Redboard_traces.svg");
+        background-repeat: repeat-x;
+        background-position: center;
+        background-size: 920px 100%;
+        opacity: 0.38;
+        transform-origin: center;
+    }
+
+    .homeSidePatternLeft::before {
+        transform: translate(-50%, -50%) rotate(-90deg);
+    }
+
+    .homeSidePatternRight::before {
+        transform: translate(-50%, -50%) rotate(90deg);
     }
 
     .pcbTracesSide {
