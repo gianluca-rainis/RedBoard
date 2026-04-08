@@ -1,7 +1,7 @@
 {
   "title": "Home",
-  "description": "",
+  "description": "A collection of unsorted documentation intended to provide technical information.",
   "root": true,
   "icon": "House",
-  "pages": ["home", "FAQ"]
+  "pages": ["index", "FAQ"]
 }

@@ -1,0 +1,7 @@
+{
+  "title": "Tutorial",
+  "description": "A tutorial on how to build your first board with the RP2040.",
+  "root": true,
+  "icon": "NotebookText",
+  "pages": ["index", "kicadSetup", "kicadSchematics"]
+}
