@@ -1,0 +1,32 @@
+---
+title: USB-C and power supply
+icon: Usb
+---
+
+## USB-C connector and power supply
+![RP2040 schematic with USB-C connector and power supply](/powerRP2040.png)
+Here we have an image of the RP2040 schematic with a USB-C connector and power supply added.
+The USB-C connector is the provider of the 5V power supply to the board.
+The port is also used for data transfer and programming the RP2040 microcontroller.
+The D+ and D- lines are connected to the microcontroller for USB communication, while the VBUS line provides power to the board.
+The VBUS line is connected to a **NCP1117-3.3** voltage regulator, which steps down the 5V from the USB-C connector to a stable 3.3V supply for the RP2040 and other components on the board.
+
+The connections on the VREG_OUT, DVDD, IOVDD, USB_VDD, ADC_AVDD and VREG_IN could appear confusing.
+Let's break it down:
+
+- **VREG_OUT**: It produce a stable 1.1V supply
+- **DVDD**: This is the main power supply for the digital logic of the RP2040 microcontroller. It powers the core and SRAM of the microcontroller.
+
+- **IOVDD**: It provide power to the GPIO and the I/O pins of the microcontroller.
+- **USB_VDD**: This is the voltage supply for the USB interface. It powers the USB transceiver and related circuitry for USB communication.
+- **ADC_AVDD**: It provides power to the analog-to-digital converter (ADC) of the RP2040 microcontroller. The ADC is used for measuring analog signals, and it requires a stable voltage supply for accurate readings.
+- **VREG_IN**: This is the input voltage for the voltage regulator. It is connected to the 3.3V supply from the USB-C connector, which is then regulated down to 1.1V for the microcontroller and other components on the board.
+
+### PCB design considerations
+When designing the PCB for the RP2040 board, it is important to ensure that the power supply lines are properly routed and decoupled to minimize noise and ensure stable operation of the microcontroller.
+
+In particular, we have to follow these guidelines:
+- The C4 capacitor is placed close to the VREG_IN pin to provide decoupling and stabilize the voltage supply.
+- The C3 capacitor is placed close to the VREG_OUT pin to provide decoupling and stabilize the voltage supply for the microcontroller.
+- The R1 and R2 resistors are placed close to the USB_DP and the USB_DM pins of the RP2040, to ensure proper termination of the USB data lines and minimize signal reflections.
+
