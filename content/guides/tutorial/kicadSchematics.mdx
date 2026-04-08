@@ -8,3 +8,42 @@ Launch the Schematic Editor by clicking on the "Schematic Editor" icon in the Ki
 This will open a blank schematic sheet where you can start adding components and wiring them together.
 
 ![Schematic Editor](/kicadSchematic.png)
+
+## Add Components
+To add components to your schematic, click on the "Place Symbols" icon in the toolbar.
+
+![Place Symbols](/kicadAddSymbol.png)
+
+For first, let's add the RP2040.
+In the search bar, type "RP2040" and select the first result from the list.
+
+![Add RP2040](/rp2040Symbol.png)
+
+As you can see, the RP2040 symbol has several pins that we will need to connect to other components in our circuit.
+In addition to the symbol, we also have the footprint already associated with the component.
+
+![RP2040 Footprint](/rp2040Placed.png)
+
+Once the microcontroller is placed on the schematic, we need to start making the first connections.
+This guide will follow the guidelines provided by the official RP2040 documentation, available in the [Hardware Design with RP2040](https://pip-assets.raspberrypi.com/categories/814-rp2040/documents/RP-008279-DS-1-hardware-design-with-rp2040.pdf).
+
+## Connect Components
+To connect components in the schematic, we will use the "Draw Wires" tool.
+
+![Connect RP2040 to Resistors](/connectComponents.png)
+
+For the example, we placed two resistors of 27.4Ω each.
+To place these two resistors you can, as seen above, use the "Place Symbols" tool and search for "resistor".
+Then, select the first result and place two of them on the schematic.
+To change the value of the resistors, select each one and double-click on it to open the properties dialog.
+Change the 'Value' field to "27.4" and click "OK" to save the changes.
+
+Connect the resistors to the RP2040 as shown in the image above, using the "Draw Wires" tool.
+The *USB_DP* and the *USB_DM* pins of the RP2040 should be connected to the resistors, and the other ends of the resistors should be connected to the USB connector (not shown in the image above).
+
+## Delete Connections or Components
+If you need to delete a connection or a component, you can simply select it and press the "Canc" button on your keyboard.
+Alternatively, you can right-click on the component or connection and select "Delete" from the context menu.
+
+## Save Your Schematic
+To save your schematic, click on the "Save" icon in the toolbar or press "Ctrl + S" on your keyboard.
