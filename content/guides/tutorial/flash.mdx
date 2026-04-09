@@ -3,3 +3,23 @@ title: Flash
 icon: Microchip
 ---
 
+## Flash memory
+The flash memory is a non-volatile storage component that is used to store the firmware and other data on the RP2040 board.
+The flash memory is connected to the RP2040 microcontroller through the SPI interface, which allows for fast data transfer and efficient access to the stored data.
+
+For our design, due to the fact that we are following the official Hardware Design Manual, we will use the same flash memory as the manual's one: the **W25Q128JVS**.
+The W25Q128JVS is a 128 Mbit (16 MB) flash memory chip that provides ample storage capacity for our firmware and data.
+It is a popular choice for embedded systems and microcontroller projects due to its reliability, performance, and ease of use.
+
+![Schematic of the Flash](/flash.png)
+
+Let's see the connenctions of the flash memory in our schematic:
+- **Vcc**: This is the power supply pin for the flash memory. It is connected to the 3.3V supply, which provides power to the flash memory chip. In parallel to the Vcc pin, we have a capacitor of the value of 100nF, connected to GND.
+- **GND**: This is the ground pin for the flash memory. It is connected to the GND.
+- **CS**: This is the chip select pin for the flash memory. It is connected to the QSPI_SS pin of the RP2040 microcontroller. The chip select pin is used to enable or disable the flash memory for communication with the microcontroller. This pin is enabled when it's pulled low, so there's a pull-up resistor of 10kΩ connected to 3.3V to ensure that the flash memory is disabled when not in use. This resistor is not strictly necessary, but it is a common practice to include it to prevent unintended communication with the flash memory.
+This pin is also connected to a pin header, with a resistor of 1kΩ in series, to allow for programming and debugging of the flash memory: when the pin is connected to GND, the flash memory is enabled for programming and debugging, and the RP2040 show the flash memory as a mass storage device when connected to a computer via USB.
+- **CLK**: This is the clock pin for the flash memory. It is connected to the QSPI_SCLK pin of the RP2040 microcontroller. The clock pin is used to synchronize the communication between the flash memory and the microcontroller.
+- **DI/IO0**: This is the data input pin for the flash memory. It is connected to the QSPI_SD0 pin of the RP2040 microcontroller. The data input pin is used to send data from the microcontroller to the flash memory.
+- **DO/IO1**: This is the data output pin for the flash memory. It is connected to the QSPI_SD1 pin of the RP2040 microcontroller. The data output pin is used to receive data from the flash memory.
+- **WP/IO2**: This is the write protect pin for the flash memory. It is connected to the QSPI_SD2 pin of the RP2040 microcontroller. The write protect pin is used to enable or disable write operations to the flash memory. When this pin is pulled low, write operations are disabled, and when it is pulled high, write operations are enabled.
+- **HOLD/RESET/IO3**: This is the hold/reset pin for the flash memory. It is connected to the QSPI_SD3 pin of the RP2040 microcontroller. The hold/reset pin is used to pause or reset the communication between the flash memory and the microcontroller. When this pin is pulled low, it will pause the communication, and when it is pulled high, it will resume the communication. Additionally, this pin can be used to reset the flash memory when it is pulled low for a certain duration.

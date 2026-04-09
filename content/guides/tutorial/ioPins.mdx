@@ -1,0 +1,50 @@
+---
+title: IO Pins
+icon: Cable
+---
+
+## IO Pins
+The IO pins of a microcontroller are the physical connections that allow us to interface with the outside world.
+They can be used for various purposes, such as digital input/output, analog input, communication interfaces, and more.
+
+In this example, we will connect the GPIO pins of the RP2040 to two connectors of 18 pins each, which can be used to connect external components and peripherals to our board.
+
+![IO pins unconnected](/ioPinsUnconnected.png)
+Before to made the connections, we need to explain the Labels in KiCad.
+
+## Labels
+The Labels in KiCad are used to identify and connect different parts of the schematic.
+They allow us to create connections between different components without having to draw wires between them.
+
+It's an userfull tool to keep our schematic clean and organized, especially when we have a lot of components and connections.
+
+To create a Label, we can use the "Place Global Label" tool in the schematic editor.
+This will allow us to place a label on the schematic and give it a name.
+
+![Place Global Label](/placeLabel.png)
+We have to give the label a name that represents the connection we want to create.
+Note that the Shape of the label is important, as it indicates the type of connection we are creating.
+It is used to represent in the schematic if the signals enter (*Input*) or exit (*Output*) from the Label.
+Usually most of the IO Labels are *Bidirectional*, as they can be used for both input and output, but we can also use *Input* or *Output* labels if we want to specify the direction of the signal.
+
+For simplicity, we will use *Bidirectional* labels for all our IO connections, as they can be used for both input and output.
+
+![A Label](/label.png)
+This image show the form of a label.
+When we place a second label with the same name, KiCad will automatically create a logical connection between the components that are connected to those labels.
+
+## Connecting the IO Pins
+To connect the IO pins of the RP2040 to the connectors, we will use the Labels to create the connections between the components.
+First of all, create all the necessary labels for the IO pins of the RP2040 and the connectors.
+
+![IO pins with Labels](/pairOfLabels.png)
+In the image above, we can see the IO pins of the RP2040 with the corresponding labels, and the connectors with their own labels.
+In this example we have chosen to name the labels with the name of the pin they represent, but we can choose any name that we want, as long as it is consistent and meaningful.
+
+Once we have this pairs of labels, we can connect them to the IO Pins.
+
+![IO pins connected](/ioPinsConnected.png)
+Once we have connected all the IO pins to the connectors, we can see that the schematic is much cleaner and more organized.
+Remember to connect the RUN, SWCLK and SWD pins, as they are essential for programming and debugging the RP2040.
+
+The choice to use a reverse order of the labels on the second connector is to make it easier to connect the components on the PCB layout, as it will allow us to route the traces more easily and avoid crossing them.

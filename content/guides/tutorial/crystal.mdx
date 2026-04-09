@@ -1,0 +1,24 @@
+---
+title: Crystal and Clock
+icon: Activity
+---
+
+## Crystal and Clock
+The RP2040 microcontroller has an internal oscillator that can be used as a clock source for the microcontroller.
+However, for many applications, it is necessary to use an external crystal oscillator to provide a more stable and accurate clock signal.
+
+For this example, we will use a 12MHz crystal oscillator, which is a common choice for many microcontroller applications.
+
+![Crystal and Clock](/crystal.png)
+The crystal is connected to the GND at the 2 and 4 pins.
+
+The 1 pin is connected directly to the XIN pin of the RP2040 microcontroller.
+The 3 pin is connected to a resistor of 1kΩ and then to the XOUT pin of the RP2040 microcontroller.
+
+Both the pins of the crystal are also connected to a capacitor of 15pF, which is connected to GND.
+The values of the capacitors can vary depending on the specific crystal being used and the requirements of the application, but 15pF is a common value for many crystals.
+
+The crystal oscillator provides a stable and accurate clock signal to the microcontroller, which is essential for the proper operation of the microcontroller and the timing of various functions and peripherals.
+
+Remember to check the datasheet of the crystal you are using to ensure that you are using the correct values for the capacitors and resistor, as well as to verify the recommended operating conditions for the crystal.
+In the [Hardware Design with RP2040](https://pip-assets.raspberrypi.com/categories/814-rp2040/documents/RP-008279-DS-1-hardware-design-with-rp2040.pdf) you can find a section dedicated to the crystal oscillator and its requirements, which can be very helpful when designing your circuit.
