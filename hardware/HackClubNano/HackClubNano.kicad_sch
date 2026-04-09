@@ -6,7 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Hack Club Nano")
-		(date "2026-04-08")
+		(date "2026-04-09")
+		(company "Hack Club RedBoard")
 	)
 	(lib_symbols
 		(symbol "Connector:USB_C_Plug_USB2.0"
@@ -6578,7 +6579,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 227.0252 50.8 0)
 			(effects
 				(font
@@ -7081,7 +7082,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 83.5152 113.03 0)
 			(effects
 				(font
@@ -7148,7 +7149,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Crystal:Crystal_HC49-4H_Vertical"
 			(at 87.63 171.45 0)
 			(effects
 				(font
@@ -7224,7 +7225,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 188.9252 50.8 0)
 			(effects
 				(font
@@ -7292,7 +7293,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Vertical"
 			(at 21.59 124.46 0)
 			(effects
 				(font
@@ -7426,7 +7427,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
 			(at 34.29 39.37 0)
 			(effects
 				(font
@@ -7529,7 +7530,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 96.2152 31.75 0)
 			(effects
 				(font
@@ -7662,7 +7663,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 104.14 89.408 90)
 			(effects
 				(font
@@ -7864,7 +7865,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x18_P2.00mm_Vertical"
 			(at 254 105.41 0)
 			(effects
 				(font
@@ -8045,7 +8046,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 36.83 123.698 90)
 			(effects
 				(font
@@ -8115,7 +8116,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 201.6252 50.8 0)
 			(effects
 				(font
@@ -8185,7 +8186,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 106.3752 50.8 0)
 			(effects
 				(font
@@ -8255,7 +8256,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 163.5252 50.8 0)
 			(effects
 				(font
@@ -8325,7 +8326,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x18_P2.00mm_Vertical"
 			(at 217.17 105.41 0)
 			(effects
 				(font
@@ -8509,7 +8510,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 214.3252 50.8 0)
 			(effects
 				(font
@@ -8711,7 +8712,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 239.7252 50.8 0)
 			(effects
 				(font
@@ -8781,7 +8782,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 127.9652 31.75 0)
 			(effects
 				(font
@@ -8939,7 +8940,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 176.2252 50.8 0)
 			(effects
 				(font
@@ -9006,7 +9007,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 71.12 176.2252 0)
 			(effects
 				(font
@@ -9074,7 +9075,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 104.14 86.868 90)
 			(effects
 				(font
@@ -9144,7 +9145,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 160.9852 60.96 0)
 			(effects
 				(font
@@ -9412,7 +9413,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 121.6152 60.96 0)
 			(effects
 				(font
@@ -9480,7 +9481,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 78.74 166.6748 0)
 			(effects
 				(font
@@ -9816,7 +9817,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 100.33 177.038 90)
 			(effects
 				(font
@@ -9949,7 +9950,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 46.482 118.11 90)
 			(effects
 				(font
@@ -10019,7 +10020,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 119.0752 50.8 0)
 			(effects
 				(font

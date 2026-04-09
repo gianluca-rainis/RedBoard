@@ -1,0 +1,77 @@
+---
+title: PCB Design with KiCad
+icon: CircuitBoard
+---
+
+## PCB Design with KiCad
+At this point of the tutorial, we have a complete schematic for our project.
+Here the image of the finished schematic:
+![Finished Schematic](/schematicFinished.png)
+
+The next step is to design the PCB.
+But before we can start designing the PCB, we need to assign footprints to the components in our schematic.
+
+## Assigning Footprints
+To assign footprints to the components in our schematic, we need to open the "Assign Footprints" tool.
+To do this, click on the "Assign Footprints" button in the toolbar, or go to "Tools" > "Assign Footprints".
+This will open the "Assign Footprints" window.
+
+![Assign Footprints Window](/footprintsTool.png)
+
+In this window, you will see a list of all the components in your schematic on the left, and a list of all the available footprints on the right.
+In yellow you can see the components that do not have footprints assigned yet.
+Some components have footprints assigned by default, but we need to assign footprints to all the components in our schematic.
+
+To assign a footprint to a component, simply click on the component in the left list, and then click on the desired footprint in the right list.
+
+![Assigning Footprints](/footprintsCapacitors.png)
+
+In this example, we are assigning the "*Capacitor_SMD:C_0603_1608Metric*" footprint to the capacitors in our schematic.
+From the footprint it depends the phisical size of the component on the PCB, so it is important to choose the correct footprint for each component.
+Remember that the footprint should match the component you are using in your project, otherwise you might have issues when soldering the components on the PCB.
+
+Some components have footprints assigned by default, but it is always a good idea to double-check that the assigned footprints are correct for the components you are using in your project.
+
+Here are the default footprints assigned to some of the components in our schematic:
+- The RP2040 microcontroller by default has the "*Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm*" footprint assigned.
+- The NCP1117-3.3  voltage regulator by default has the "*Package_TO_SOT_SMD:SOT-223-3_TabPin2*" footprint assigned.
+- The W25Q128JVS flash memory by default has the "*Package_SO:SOIC-8_5.3x5.3mm_P1.27mm*" footprint assigned.
+
+For the other components, we need to assign the footprints manually.
+
+Here is the list of footprints we will assign to the components in our schematic:
+- Resistors: "*Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal*"
+- Capacitors: "*Capacitor_SMD:C_0603_1608Metric*"
+- Connector 1x18: "*Connector_PinHeader_2.00mm:PinHeader_1x18_P2.00mm_Vertical*"
+- Connector 1x2: "*Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Vertical*"
+- Crystal: "*Crystal:Crystal_HC49-4H_Vertical*"
+- USB C: "*Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12*"
+- RP2040 microcontroller: "*Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm*"
+- NCP1117-3.3 voltage regulator: "*Package_TO_SOT_SMD:SOT-223-3_TabPin2*"
+- W25Q128JVS flash memory: "*Package_SO:SOIC-8_5.3x5.3mm_P1.27mm*"
+
+Here the image of the assigned footprints for our schematic:
+![Assigned Footprints](/footprints.png)
+
+## The PCB Editor
+Now that we have assigned footprints to all the components in our schematic, we can start designing the PCB.
+To open the PCB editor, click on the "PCB Editor" button in the toolbar, or go to "Tools" > "PCB Editor".
+You can also open it from the "Project Manager" by clicking on the "PCB Editor" button next to your project name.
+This will open the PCB editor, where we can start designing our PCB.
+
+As you can see, it's quite empty at the moment, but don't worry, we will fill it with our components and traces in the next steps of the tutorial.
+
+![Empty PCB Editor](/pcbEditorEmpty.png)
+
+To add all the components from our schematic to the PCB editor, we need to click on the "Update PCB from Schematic" button in the toolbar, or go to "Tools" > "Update PCB from Schematic".
+This will open the "Update PCB from Schematic" window.
+From here, click on the "Update PCB" button to add all the components from our schematic to the PCB editor.
+
+![Update PCB from Schematic](/pcbUpdate.png)
+
+Now we have all the components from our schematic in the PCB editor, but they are not yet connected with traces.
+In the next steps of the tutorial, we will connect the components with traces and design the layout of our PCB.
+
+## Ordering the Components
+Before we start connecting the components with traces, it is a good idea to order the components in a way that makes sense for our PCB layout.
+
