@@ -1,0 +1,40 @@
+---
+title: Export and Print the Board
+icon: PackagePlus
+---
+
+## Export the Board
+![The finished board](/pcbFinished.png)
+This is an image of the board finished.
+I've added some graphics on the back to make it look nicer.
+
+![The board in the 3D viewer](/3drenderBoard.gif)
+And that's how the board looks like in the 3D viewer.
+
+Now we have a working board, we are sure of the design and we want that a manufacturer prints the PCB for us.
+To do that, we need to export the design as gerber files, which are the standard file format used by PCB manufacturers.
+
+To export the design, we need to go, from the PCB editor, to "File" > "Fabrication Outputs" > "Gerbers (.gbr)".
+This will open a dialog where we can configure the export settings.
+
+![Exporting the board](/gerberExport.png)
+Select as output directory the "gerber" folder in the project.
+If it doesn't exist, create it.
+Then, click on "Plot" to export the design as gerber files.
+
+Now we need to generate the drill files, which tells where the holes are on the board.
+
+To do that, from the Gerber export dialog, click on "Generate Drill Files".
+This will open another dialog where, after being sure that the output directory is the same as before, we can click on "Generate" to export the files.
+
+Now create a zip file with the contents of the "gerber" folder, and we are ready to send it to the manufacturer.
+
+I recommend [JLCPCB](https://jlcpcb.com/) as a manufacturer, but there are many others that you can use.
+
+Anyway, I reccommend you to check the footprints of the components you are going to use before to print the board, because if you have the wrong footprints, the components won't fit on the board and you will have to print it again.
+To be sure of the components you can print the board on a paper (obviously in scale 1:1) and check if the components (that I recommend to buy before printing the board) would fit.
+
+## Conclusion
+Congratulations on making it this far!
+You now have the skills to design real RP2040-powered boards from scratch, use them to build something great!
+Good luck with your next projects!

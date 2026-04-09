@@ -3,5 +3,5 @@
   "description": "A tutorial on how to build your first board with the RP2040.",
   "root": true,
   "icon": "NotebookText",
-  "pages": ["index", "kicadSetup", "lapseSetup", "kicadSchematics", "usbcPower", "flash", "crystal", "ioPins", "kicadPcb"]
+  "pages": ["index", "kicadSetup", "lapseSetup", "kicadSchematics", "usbcPower", "flash", "crystal", "ioPins", "kicadPcb", "exportAndPrint"]
 }
