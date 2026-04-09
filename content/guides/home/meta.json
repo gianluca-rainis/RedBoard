@@ -3,5 +3,5 @@
   "description": "A collection of unsorted documentation intended to provide technical information.",
   "root": true,
   "icon": "House",
-  "pages": ["index", "FAQ"]
+  "pages": ["index", "FAQ", "lapseSetup", "kicadSetup"]
 }
