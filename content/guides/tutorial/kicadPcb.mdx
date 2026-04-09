@@ -44,7 +44,7 @@ Here is the list of footprints we will assign to the components in our schematic
 - Capacitors: "*Capacitor_SMD:C_0603_1608Metric*"
 - Connector 1x18: "*Connector_PinHeader_2.00mm:PinHeader_1x18_P2.00mm_Vertical*"
 - Connector 1x2: "*Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Vertical*"
-- Crystal: "*Crystal:Crystal_HC49-4H_Vertical*"
+- Crystal: "*Crystal:Crystal_SMD_5032-4Pin_5.0x3.2mm*"
 - USB C: "*Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12*"
 - RP2040 microcontroller: "*Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm*"
 - NCP1117-3.3 voltage regulator: "*Package_TO_SOT_SMD:SOT-223-3_TabPin2*"
@@ -75,3 +75,124 @@ In the next steps of the tutorial, we will connect the components with traces an
 ## Ordering the Components
 Before we start connecting the components with traces, it is a good idea to order the components in a way that makes sense for our PCB layout.
 
+Remember that we have to follow these guidelines:
+- The C4 capacitor is placed close to the VREG_IN pin to provide decoupling and stabilize the voltage supply.
+- The C3 capacitor is placed close to the VREG_OUT pin to provide decoupling and stabilize the voltage supply for the microcontroller.
+- The R1 and R2 resistors are placed close to the USB_DP and the USB_DM pins of the RP2040, to ensure proper termination of the USB data lines and minimize signal reflections.
+
+This is an example of how we can order the components on our PCB:
+![Ordered Components](/componentsPosition.png)
+
+In this layout, you can see the RP2040 microcontroller in the center, with the USB C connector on the top, the voltage regulator under the USB C connector, the flash memory on the bottom, and the crystal on the left.
+The resistors and capacitors are placed close to the components they are connected to, following the guidelines mentioned above.
+
+This is just an example of how we can order the components on our PCB, and there are many other ways to do it and it depends on your preferences and the constraints of your PCB design.
+
+## Connecting the Components with Traces
+Now that we have ordered the components on our PCB, we can start connecting them with traces.
+Before we start connecting the components, you need to know what a trace is and how layers work in a PCB design.
+
+### Traces, Vias and Layers
+A trace is a conductive path that connects two or more components on a PCB.
+Traces are usually made of copper and are used to carry electrical signals between components.
+It's a good practice to keep the traces as short as possible to minimize signal loss and interference.
+To prevent interference, it's also a good idea to keep the traces away from each other and to use ground planes to shield the traces from external noise.
+Another thing to keep in mind is that the width of the traces should be appropriate for the current they will carry, to prevent overheating and ensure proper functioning of the PCB.
+Also you should avoid making sharp angles in the traces, as they can cause signal reflections and interference.
+One last thing you should avoid is connecting multiple traces together in one place (not belonging to a component and not supported by a via).
+
+A via is a small hole in the PCB that allows you to connect traces on different layers of the PCB.
+
+A PCB design can have multiple layers, and each layer can be used for different purposes.
+Every layer can have traces, but usually the top and bottom layers are used for traces, while the inner layers are used for power planes and ground planes.
+Remember that the traces on different layers are not connected to each other, so if you want to connect a trace from the top layer to a trace on the bottom layer, you need to use a via.
+
+### Add more layers
+By default, the PCB editor has only two layers: the top layer and the bottom layer.
+To add more layers to our PCB design, we need to go to "File" > "Board Setup", and then go to the "Physical Stackup" tab.
+Here we can change the "Copper Layers" to the desired number of layers we want for our PCB design.
+
+In this tutorial, we will use a 4-layer PCB design, so we will change the "Copper Layers" to 4.
+
+![Add more layers](/multylayerpcb.png)
+
+### Connecting the components
+To connect the components with traces, we need to use the "Route Tracks" tool.
+
+![Route Tracks Tool](/routetracks.png)
+The four layers we have in our PCB design are:
+- F.Cu: the top layer, where we will place the components and route the traces.
+- In1.Cu: the first inner layer, where we will route some of the traces to avoid crossing other traces on the top layer.
+- In2.Cu: the second inner layer, where we will have our GND plane to provide a common reference point for all the components and to help reduce noise and interference in our PCB design.
+- B.Cu: the bottom layer, where we will route some of the traces to avoid crossing other traces on the top layer.
+
+To use a specific layer for routing a trace, you can select the desired layer from the "Layers" dropdown menu in the toolbar before routing the trace.
+
+![Connecting Components](/connections.png)
+To connect the components, simply click on the "Route Tracks" tool, select the desired layer from the "Layers" dropdown menu, and then click on the pad of the component you want to connect, and then click on the pad of the component you want to connect to.
+This will create a trace between the two pads on the selected layer.
+Be careful when routing the traces to avoid crossing other traces and to keep the traces as short as possible.
+
+The components on our board can be of two types: through-hole components and surface-mount components (SMDs).
+
+Through-hole components have leads that pass through the PCB and are soldered on the opposite side, while surface-mount components are soldered directly on the surface.
+As for routing, through-hole components allow traces to be routed on any layer, while SMD components require traces to be routed on the top layer only.
+
+To avoid crossing traces on the top layer, we can switch between the layers using the vias.
+To create a via, you can simply press the "V" key while routing a trace, and then click on the desired location to place the via.
+This will create a via that connects the trace on the current layer to the trace on the next layer.
+Remember that the via will have a certain size, so you should place it in a way that does not interfere with other traces or components.
+
+![Multi-Layer Connections](/multylayerconnections.png)
+In this example, you can see that we have routed some traces on the top layer, and then we have used vias to switch to the bottom layer to connect the DP and DM pins of the RP2040 to its resistors.
+
+Before to continue connecting the components, we should draw the boards of our board.
+
+## Drawing the Board's Outline
+Your board needs to have a defined shape and size, and this is done by drawing the board's outline.
+
+To draw the board's outline, you need to use the "Edge.Cuts" layer, which is a special layer that defines the shape and size of the PCB.
+
+To draw the board's outline, select the "Edge.Cuts" layer, and then use the "Draw Rectangles" tool to draw a rectangle that defines the shape and size of your PCB.
+Obviously, you can use other tools to draw the board's outline, such as the "Draw Lines" tool or the "Draw Polygons" tool, but for our board, a simple rectangle will do the job.
+
+![Drawing Board's Outline](/edgeCuts.png)
+Remember to left some space around the components and traces to avoid any issues during the manufacturing process, and to ensure that the board can be properly cut and drilled.
+
+![Drawing Arcs](/drawarcs.png)
+I used the "Draw Arcs" tool to draw the arcs on the corners of the board, to give it a more rounded shape and to avoid sharp corners that can be prone to breaking.
+
+Now our board has a defined shape, so we can finally use the "3D Viewer" tool to see how our board looks in 3D.
+
+## The 3D Viewer
+To open the 3D viewer, click on the "3D Viewer" button in the toolbar, or go to "View" > "3D Viewer".
+
+![3D Viewer](/3dViewer.png)
+This is our board in 3D, and as you can see, it looks quite good.
+
+The last thing we need to do before continuing with the traces is to draw a filled layer for the GND plane on the In2.Cu layer, to provide a common reference point for all the components and to help reduce noise and interference in our PCB design.
+
+## Drawing a Filled Layer
+First of all, you need to select the In2.Cu layer.
+Then, click on the "Draw Filled Zones" tool in the toolbar, or go to "Place" > " Draw Filled Zones".
+
+It works like the "Draw Rectangles" tool, but instead of drawing a rectangle, it draws a filled zone that will be filled with copper during the manufacturing process.
+
+![Draw Filled Zones](/copperZoneProperties.png)
+When you click on a point on the PCB, it will open the "Copper Zone Properties" window, where you can set the properties of the filled zone.
+
+Select the "GND" net from the "Net" dropdown menu, and then click on the "OK" button to create the filled zone.
+
+Once we have created the zone, we need to fill it with copper.
+To fill the zone with copper, select it and then right-click > "Zones" > "Draft Fill Selected Zones", or go to "Edit" > "Fill All Zones".
+
+![Filled Zone](/filledZone.png)
+Now we have a filled zone for the GND plane on the In2.Cu layer, and we can continue connecting the components.
+Rememeber that you can't use anymore the IN2.Cu layer for routing traces, because it is filled with copper.
+All the through-hole components that have to be connected to GND now are already connected, but to connect the SMD components to GND, we need to use vias.
+
+## Final Connections
+![The Final Connections](/connectionsFinished.png)
+This is the image with all the connections between the components on our PCB design.
+
+If you want to add some graphical elements to your PCB design, such as text or logos, you can use the "F.SilkS" layer for the top silkscreen, and the "B.SilkS" layer for the bottom silkscreen.

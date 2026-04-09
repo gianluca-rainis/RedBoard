@@ -7149,7 +7149,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_HC49-4H_Vertical"
+		(property "Footprint" "Crystal:Crystal_SMD_5032-4Pin_5.0x3.2mm"
 			(at 87.63 171.45 0)
 			(effects
 				(font
