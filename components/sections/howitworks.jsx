@@ -5,37 +5,37 @@ import Image from "next/image";
 export function HowItWorksSection() {
   const steps = [
     {
-      image: "/info1.png",
+      image: "/schematicFinished.png",
       title: "Design a Board powered by RP2040",
       description:
         "Create your own board from scratch. Read the documentation, learn the fundamentals, and create the schematics and the PCB.",
     },
     {
-      image: "/info2.png",
+      image: "/credits.png",
       title: "Get Credits",
       description:
         "Earn credits by completing the board design, the README, and the documentation of your journey.",
     },
     {
-      image: "/info3.png",
+      image: "/redboardGrant.png",
       title: "Spend in Shop",
       description:
         "Use your earned credits to buy grants for the PCB production, for the components and tools you need.",
     },
     {
-      image: "/info4.png",
+      image: "/3dViewer.png",
       title: "Build Your Board",
       description:
         "Assemble your designed board, solder the components, and test your creation.",
     },
     {
-      image: "/info5.png",
+      image: "/moreCredits.png",
       title: "Get Credits",
       description:
         "Earn credits by assembling the board you designed and sharing your project with a video and some photos.",
     },
     {
-      image: "/info6.png",
+      image: "/pricesRedboard.png",
       title: "Spend in Shop",
       description:
         "Use your earned credits to buy whatever you want in the shop, from tools to components, and get ready for your next project!",
@@ -49,12 +49,12 @@ export function HowItWorksSection() {
       <div className="grid gap-6 md:grid-cols-2">
         {steps.map((step, index) => {
           return (
-            <Card key={index} className="group relative overflow-hidden border-border/60">
+            <Card key={index} className="group relative overflow-hidden border-border/60 justify-center">
               <div className="relative overflow-hidden">
                 <Image
                   src={step.image}
                   alt={step.title}
-                  className="h-auto w-full transition duration-300 group-hover:scale-[1.02]"
+                  className="h-auto w-full transition duration-300 group-hover:scale-[1.02] howitworks-image"
                   width={300}
                   height={300}
                 />
