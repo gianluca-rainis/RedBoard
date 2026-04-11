@@ -1,8 +1,13 @@
+"use client";
+
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import AnimatedSection from "@/components/animations/section";
 import Image from "next/image";
+import { useState } from "react";
 
 export function HowItWorksSection() {
+  const [activeStep, setActiveStep] = useState(null);
+
   const steps = [
     {
       image: "/schematicFinished.png",
@@ -48,8 +53,23 @@ export function HowItWorksSection() {
 
       <div className="grid gap-6 md:grid-cols-2">
         {steps.map((step, index) => {
+          const isActive = activeStep === index;
+
           return (
-            <Card key={index} className="group relative overflow-hidden border-border/60 justify-center">
+            <Card
+              key={index}
+              className="group relative overflow-hidden border-border/60 justify-center"
+              role="button"
+              tabIndex={0}
+              aria-expanded={isActive}
+              onClick={() => setActiveStep(isActive ? null : index)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  setActiveStep(isActive ? null : index);
+                }
+              }}
+            >
               <div className="relative overflow-hidden">
                 <Image
                   src={step.image}
@@ -58,7 +78,11 @@ export function HowItWorksSection() {
                   width={300}
                   height={300}
                 />
-                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/98 via-background/85 to-transparent opacity-0 transition duration-300 group-hover:opacity-100">
+                <div
+                  className={`absolute inset-0 flex items-end bg-gradient-to-t from-background/98 via-background/85 to-transparent transition duration-300 ${
+                    isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                  }`}
+                >
                   <div className="px-5 pt-5">
                     <CardTitle className="text-xl text-foreground">
                       {step.title}
