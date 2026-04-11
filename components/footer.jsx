@@ -27,7 +27,7 @@ export default function Footer() {
             </div>
             
             <p className="text-muted-foreground leading-relaxed">
-              A Hack Club YSWS where teens from around the world build design a custom RP2040-powered PCB from scratch, earn credits based on tracked hours, and redeem them for grants to manufacture and build their board.
+              A Hack Club YSWS where teens from around the world design a custom RP2040-powered PCB from scratch, earn credits based on tracked hours, and redeem them for grants to manufacture and build their board.
             </p>
 
             <div className="text-sm text-muted-foreground mt-auto">
