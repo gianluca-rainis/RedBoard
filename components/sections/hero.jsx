@@ -15,13 +15,15 @@ export default function HeroSection() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
     const trimmedEmail = email.trim();
+
     if (!trimmedEmail) {
       return;
     }
 
     const params = new URLSearchParams({ email: trimmedEmail });
-    router.push(`/dashboard/login?${params.toString()}`);
+    router.push(`/dashboard?${params.toString()}`);
   };
 
   return (
