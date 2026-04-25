@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import AnimatedSection from "@/components/animations/section";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Rocket } from "lucide-react";
@@ -12,6 +12,32 @@ import ButtonAnimation from "../buttons/animation";
 export default function HeroSection() {
   const router = useRouter();
   const [email, setEmail] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    let ignore = false;
+
+    async function loadSession() {
+      try {
+        const response = await fetch("/api/session");
+        const data = await response.json();
+
+        if (!ignore) {
+          setIsLoggedIn(Boolean(data.loggedIn));
+        }
+      } catch {
+        if (!ignore) {
+          setIsLoggedIn(false);
+        }
+      }
+    }
+
+    loadSession();
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,7 +49,7 @@ export default function HeroSection() {
     }
 
     const params = new URLSearchParams({ email: trimmedEmail });
-    router.push(`/dashboard?${params.toString()}`);
+    router.push(`/accountPage?${params.toString()}`);
   };
 
   return (
@@ -56,27 +82,41 @@ export default function HeroSection() {
             |<span>Ages 13-18</span>
           </div>
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-            <form
-              onSubmit={handleSubmit}
-              className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row"
-            >
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="h-10 rounded-md border bg-card px-4 py-2 text-sm outline-none placeholder:text-muted-foreground focus:ring-2 focus:ring-primary sm:min-w-72"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-              />
+            {isLoggedIn ? (
               <ButtonAnimation>
                 <Button
-                  type="submit"
+                  asChild
                   size="lg"
-                  className="w-full cursor-pointer sm:w-auto"
+                  className="w-full sm:w-auto"
                 >
-                  <Rocket /> RSVP Now!
+                  <Link href="/dashboard">
+                    <ArrowRight /> Dashboard
+                  </Link>
                 </Button>
               </ButtonAnimation>
-            </form>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row"
+              >
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="h-10 rounded-md border bg-card px-4 py-2 text-sm outline-none placeholder:text-muted-foreground focus:ring-2 focus:ring-primary sm:min-w-72"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                />
+                <ButtonAnimation>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full cursor-pointer sm:w-auto"
+                  >
+                    <Rocket /> RSVP Now!
+                  </Button>
+                </ButtonAnimation>
+              </form>
+            )}
             <ButtonAnimation>
               <Button
                 asChild
