@@ -28,7 +28,7 @@ export default function FAQsSection() {
   },
   {
     q: "Don't know how to make a board?",
-    a: "No worries - the program is beginner-friendly and includes guides on KiCad, RP2040 hardware design, and PCB manufacturing. You can also find many excellent tutorials online.",
+    a: "No worries - the program is beginner-friendly and includes guides on KiCad, RP2040 hardware design, and PCB manufacturing. You can also find an excellent tutorial to learn the basics from.",
   },
   {
     q: "When does this start?",

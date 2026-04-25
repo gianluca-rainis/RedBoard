@@ -1,6 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({ show=true }) {
+  if (!show) {
+    return null;
+  }
+
   return (
     <footer className="border-t bg-card py-16">
       <div className="max-w-4xl w-full mx-auto px-6">
@@ -20,9 +25,9 @@ export default function Footer() {
           {/* Content Section */}
           <div className="flex flex-col gap-6 flex-1">
             <div className="flex items-center gap-3">
-              <a href={process.env.SITE_URL} target="_blank" rel="noopener noreferrer">
+              <Link href="/">
                 <Image alt="Redboard Logo" src="/icon.svg" width={100} height={60} />
-              </a>
+              </Link>
               <div className="text-primary text-2xl font-bold">Redboard</div>
             </div>
             
