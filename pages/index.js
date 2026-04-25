@@ -1,5 +1,3 @@
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import HeroSection from "@/components/sections/hero";
 import WhatCountsSection from "@/components/sections/whatcounts";
 import { HowItWorksSection } from "@/components/sections/howitworks";
@@ -9,46 +7,39 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="max-w-4xl w-screen mx-auto p-4">
-            <div className="flex flex-col gap-10">
-                <HeroSection />
-                <div className="relative">
-                    <div className="homeSidePattern" aria-hidden="true">
-                        <div className="homeSidePatternLeft" />
-                        <div className="homeSidePatternRight" />
-                    </div>
-                    <div className="relative z-10">
-                        <HowItWorksSection />
-                        <WhatCountsSection />
-                        <FAQsSection />
-                    </div>
-                </div>
-                <Link
-                    href="https://hackclub.com"
-                    target="_blank"
-                    className="group fixed bottom-4 left-0 z-50 w-40"
-                >
-                    <Image
-                        src="/flag-orpheus-left.svg"
-                        alt="Hack Club"
-                        width={280}
-                        height={158}
-                        className="-translate-x-2 -rotate-3 duration-200 drop-shadow-[0_0_5px_rgba(192, 23, 73, 0.62)] group-hover:opacity-0 group-hover:translate-x-0 group-hover:rotate-0"
-                    />
-                    <Image
-                        src="/flag-orpheus-left.svg"
-                        alt="Hack Club"
-                        width={280}
-                        height={158}
-                        className="pointer-events-none absolute inset-0 opacity-0 -translate-x-2 -rotate-3 duration-200 drop-shadow-[0_0_5px_rgba(192, 23, 73, 0.62)] group-hover:opacity-100 group-hover:translate-x-0 group-hover:rotate-0"
-                    />
-                </Link>
+    <div className="flex flex-col gap-10">
+        <HeroSection />
+        <div className="relative">
+            <div className="homeSidePattern" aria-hidden="true">
+                <div className="homeSidePatternLeft" />
+                <div className="homeSidePatternRight" />
             </div>
-        </main>
-        <div className="grow"></div>
-        <Footer />
+            <div className="relative z-10">
+                <HowItWorksSection />
+                <WhatCountsSection />
+                <FAQsSection />
+            </div>
+        </div>
+        <Link
+            href="https://hackclub.com"
+            target="_blank"
+            className="group fixed bottom-4 left-0 z-50 w-40"
+        >
+            <Image
+                src="/flag-orpheus-left.svg"
+                alt="Hack Club"
+                width={280}
+                height={158}
+                className="-translate-x-2 -rotate-3 duration-200 drop-shadow-[0_0_5px_rgba(192, 23, 73, 0.62)] group-hover:opacity-0 group-hover:translate-x-0 group-hover:rotate-0"
+            />
+            <Image
+                src="/flag-orpheus-left.svg"
+                alt="Hack Club"
+                width={280}
+                height={158}
+                className="pointer-events-none absolute inset-0 opacity-0 -translate-x-2 -rotate-3 duration-200 drop-shadow-[0_0_5px_rgba(192, 23, 73, 0.62)] group-hover:opacity-100 group-hover:translate-x-0 group-hover:rotate-0"
+            />
+        </Link>
     </div>
   );
 }
